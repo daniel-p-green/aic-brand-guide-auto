@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "brand_name": "The AI Collective",
+    "source_snapshot_date": "2026-02-28",
+    "source_urls": [
+      "https://www.aicollective.com",
+      "https://www.aicollective.com/images/brand/Logo.svg",
+      "https://www.aicollective.com/images/brand/Logo-White.svg",
+      "https://www.aicollective.com/images/brand/Wordmark.svg",
+      "https://www.aicollective.com/images/brand/Wordmark-White.svg"
+    ],
+    "ephemeral_source_urls": [
+      "https://www.aicollective.com/_next/static/css/2d1ac66977c42890.css",
+      "https://www.aicollective.com/_next/static/css/5cccc2448d0e2390.css"
+    ],
+    "version": "1.0.0",
+    "evidence_map_path": "evidence/source-map.md",
+    "source_refresh_procedure_path": "evidence/source-map.md#refresh-procedure-for-build-hashed-css-sources",
+    "local_capture_files": [
+      "evidence/captures/2026-02-28-css-token-extracts.md"
+    ],
+    "legal_notice_path": "NOTICE.md",
+    "confidence_policy": "Use only evidence-backed values as authoritative. Mark inferred operational defaults explicitly."
+  },
+  "logos": {
+    "logo": {
+      "url": "https://www.aicollective.com/images/brand/Logo.svg",
+      "viewBox": "0 0 700 844.38",
+      "aspect_ratio": 0.828997,
+      "intended_background": "light",
+      "primary_fill_hex": "#ff640d",
+      "confidence": "high"
+    },
+    "logo_white": {
+      "url": "https://www.aicollective.com/images/brand/Logo-White.svg",
+      "viewBox": "0 0 700 844.38",
+      "aspect_ratio": 0.828997,
+      "intended_background": "dark",
+      "primary_fill_hex": "#ffffff",
+      "confidence": "high"
+    },
+    "wordmark": {
+      "url": "https://www.aicollective.com/images/brand/Wordmark.svg",
+      "viewBox": "0 0 1290.68 620.57",
+      "aspect_ratio": 2.079881,
+      "intended_background": "light",
+      "primary_fill_hex": "#374151",
+      "confidence": "high"
+    },
+    "wordmark_white": {
+      "url": "https://www.aicollective.com/images/brand/Wordmark-White.svg",
+      "viewBox": "0 0 1290.68 620.57",
+      "aspect_ratio": 2.079881,
+      "intended_background": "dark",
+      "primary_fill_hex": "#ffffff",
+      "confidence": "high"
+    }
+  },
+  "color": {
+    "brand": {
+      "primary_hex": "#ff640d",
+      "wordmark_text_hex": "#374151",
+      "primary_hsl": "23 100% 53%",
+      "confidence": "high"
+    },
+    "light": {
+      "background": "60 5% 96%",
+      "foreground": "12 6% 15%",
+      "primary": "12 6% 15%",
+      "primary_foreground": "60 9% 98%",
+      "accent": "60 4% 92%",
+      "accent_foreground": "12 6% 15%",
+      "muted": "60 5% 96%",
+      "muted_foreground": "25 5% 45%",
+      "border": "20 6% 90%",
+      "input": "20 6% 90%",
+      "ring": "12 6% 15%",
+      "radius": "1rem"
+    },
+    "dark": {
+      "background": "20 14% 4%",
+      "foreground": "60 5% 96%",
+      "primary": "60 5% 96%",
+      "primary_foreground": "20 14% 4%",
+      "accent": "30 6% 22%",
+      "accent_foreground": "60 5% 96%",
+      "muted": "12 6% 15%",
+      "muted_foreground": "24 5% 64%",
+      "border": "12 6% 15%",
+      "input": "12 6% 15%",
+      "ring": "24 6% 83%",
+      "radius": "1rem"
+    },
+    "semantic": {
+      "success_hsl": "145 63% 40%",
+      "warning_hsl": "38 92% 50%",
+      "danger_hsl": "0 84% 60%",
+      "info_hsl": "211 90% 56%",
+      "unknown_policy": "Semantic values above are inferred operational defaults for generated assets and are not claimed as official published brand values."
+    }
+  },
+  "typography": {
+    "sans": "Open Sans",
+    "serif": "georgiaPro",
+    "heading_family": "georgiaPro",
+    "body_family": "Open Sans",
+    "fallbacks": {
+      "sans": ["SF Pro Display", "ui-sans-serif", "system-ui", "sans-serif"],
+      "serif": ["Georgia", "ui-serif", "Cambria", "Times New Roman", "Times", "serif"]
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700,
+      "black": 900
+    },
+    "confidence": "high"
+  },
+  "motion": {
+    "principles": [
+      "Use restrained cinematic movement over busy kinetic effects.",
+      "Favor fade/slide/scale combinations with clear hierarchy.",
+      "Preserve content legibility during transitions."
+    ],
+    "durations_ms": {
+      "micro": 180,
+      "standard": 420,
+      "hero": 800
+    },
+    "easing": {
+      "default": "cubic-bezier(0.165,0.84,0.44,1)",
+      "inference_note": "Duration/easing values are inferred from observed CSS motion variables and tuned for operational consistency."
+    },
+    "reduced_motion_policy": "Honor prefers-reduced-motion by replacing non-essential transform animation with opacity-only transitions.",
+    "confidence": "medium"
+  },
+  "voice": {
+    "tone": [
+      "community-first",
+      "trust-oriented",
+      "forward-looking",
+      "grounded and practical"
+    ],
+    "approved_phrases": [
+      "human layer",
+      "AI era",
+      "global community",
+      "builders and stakeholders",
+      "navigate technological progress"
+    ],
+    "discouraged_patterns": [
+      "hype-only superlatives without proof",
+      "fear-forward AI framing",
+      "exclusive gatekeeping language",
+      "excessive technical jargon in public-facing copy"
+    ],
+    "do": [
+      "Center people, forums, and collaboration.",
+      "Ground claims in observable community outcomes.",
+      "Use concise, optimistic, credible language."
+    ],
+    "dont": [
+      "Portray AI progress as detached from human responsibility.",
+      "Use adversarial or tribal framing.",
+      "Over-ornament copy with buzzwords."
+    ],
+    "confidence": "high"
+  },
+  "remotion": {
+    "defaults": {
+      "fps": 30,
+      "duration_seconds": 30,
+      "aspect_ratios": ["16:9", "9:16", "1:1", "4:5"]
+    },
+    "scene_pacing": {
+      "hook_seconds": 4,
+      "content_seconds": 20,
+      "cta_seconds": 6
+    },
+    "title_rules": [
+      "Use serif-led titles (georgiaPro or approved fallback) for narrative emphasis.",
+      "Keep title lines to 3-9 words when possible.",
+      "Ensure title contrast remains AA-compliant against moving backgrounds."
+    ],
+    "caption_rules": [
+      "Set captions in sans family for readability.",
+      "Avoid full-width lower-third blocks; use concise balanced lines.",
+      "Keep captions synchronized with semantic beats, not every filler word."
+    ],
+    "safe_zone": {
+      "top_percent": 8,
+      "bottom_percent": 12,
+      "side_percent": 6
+    },
+    "audio_direction": [
+      "Use modern, minimal, forward-leaning music beds.",
+      "Prefer clean voiceover with light spatial texture.",
+      "Avoid aggressive drops that overpower message clarity."
+    ]
+  }
+}
