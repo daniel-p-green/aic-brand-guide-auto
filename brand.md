@@ -1,168 +1,153 @@
 # The AI Collective Brand Guide
 
-Version: 1.0.0  
+Version: 2.1.0  
+Package mode: Runtime independent (local-first)  
 Evidence date: 2026-02-28  
-Primary evidence map: `evidence/source-map.md`
-Public-use/legal notice: `NOTICE.md`
+Evidence map: `evidence/source-map.md`
 
-## Brand Purpose [Verified]
-The AI Collective is positioned as a people-centered AI organization that is building the human layer for the AI era. Public copy repeatedly emphasizes global community coordination, practical forums, and trust-building among builders, stakeholders, and leaders. (Evidence: E-002, E-003, E-026)
+## 1) Scope
 
-## Positioning Statement [Verified]
-The brand presents itself as the world's largest AI community, uniting 200k+ pioneers across 100+ global chapters, with messaging oriented around helping society navigate accelerating technological progress. (Evidence: E-002)
+This package is the canonical style system for:
+- Remotion videos
+- Slide decks
+- Documents
+- Agent-generated brand assets
 
-## Brand Pillars [Verified]
-- Community at scale: global chapter network and recurring gatherings. (Evidence: E-002, E-026)
-- Human coordination: conversations, forums, and stakeholder alignment. (Evidence: E-003, E-026)
-- Practical progress: builders and operators sharing real frontier signals. (Evidence: E-024, E-026)
-- Responsible momentum: trust and participation over hype. (Evidence: E-003, E-026)
+All outputs must run from local package files only.
 
-## Visual DNA [Inference]
-The live visual system combines editorial serif hierarchy with atmospheric, modern interfaces:
-- Serif-forward narrative headings.
-- High-contrast composition and dark-mode confidence.
-- Grain and gradient ambience to create depth.
-- Warm orange energy accents against cool neutrals and deep backgrounds.
+## 2) Runtime Independence Contract [Verified]
 
-This section is marked inference because explicit public prose describing visual philosophy is not published; it is derived from observed implementation patterns.
-Primary evidence basis: E-021, E-023, E-025.
+- Runtime source of truth: `tokens/brand-tokens.json`
+- Runtime CSS classes: `tokens/brand-theme.css`
+- Local logos: `assets/logos/*.svg`
+- Local fonts and licenses: `assets/fonts/**/*`
+- Do not fetch runtime style values from website endpoints.
 
-## Logo System
+## 3) Positioning and Voice [Verified]
 
-### Approved Assets [Verified]
-- `https://www.aicollective.com/images/brand/Logo.svg` (Evidence: E-004, E-005)
-- `https://www.aicollective.com/images/brand/Logo-White.svg` (Evidence: E-006)
-- `https://www.aicollective.com/images/brand/Wordmark.svg` (Evidence: E-007, E-008)
-- `https://www.aicollective.com/images/brand/Wordmark-White.svg` (Evidence: E-009)
+The AI Collective communicates a people-centered AI movement that builds the human layer for the AI era through a global community of builders and stakeholders.
 
-### Core Logo Specs [Verified]
-- Logo mark viewBox: `0 0 700 844.38` (Evidence: E-004)
-- Wordmark viewBox: `0 0 1290.68 620.57` (Evidence: E-007)
-- Logo brand fill: `#ff640d` (Evidence: E-005)
-- Wordmark text fill (light variant): `#374151` (Evidence: E-008)
-
-### Usage Rules [Inference]
-- Use white variants on dark/photographic backgrounds where standard variants fail contrast.
-- Use colored variants on light or neutral backgrounds.
-- Preserve intrinsic aspect ratio; do not stretch logos.
-- Avoid applying shadows, gradients, strokes, or filters directly to logo paths.
-
-Primary evidence basis: E-006, E-009, E-022.
-
-### Unknowns (Explicit) [Verified]
-- No public clearspace/min-size specification is discovered. (Unknown: U-001)
-- No public official lockup spacing formula is discovered. (Unknown: U-002)
-
-## Color System
-
-### Authoritative Tokens from Live CSS [Verified]
-Evidence group: E-010, E-011, E-012, E-013, E-014, E-015, E-016, E-017.
-- Light:
-  - `--background: 60 5% 96%`
-  - `--foreground: 12 6% 15%`
-  - `--primary: 12 6% 15%`
-  - `--accent: 60 4% 92%`
-- Dark:
-  - `--background: 20 14% 4%`
-  - `--foreground: 60 5% 96%`
-  - `--primary: 60 5% 96%`
-  - `--accent: 30 6% 22%`
-
-### Signature Brand Colors [Verified]
-- AIC Orange: `#ff640d` (Evidence: E-005)
-- Wordmark Slate: `#374151` (Evidence: E-008)
-
-### Operational Semantic Colors [Inference]
-For generated assets where status semantics are needed (success/warning/error/info), use the semantic tokens in `tokens/brand-tokens.json` and mark output as operational/inferred when applicable.
-
-## Typography
-
-### Typeface System [Verified]
-- Primary sans: `Open Sans` (Evidence: E-019)
-- Primary serif: `georgiaPro` (Evidence: E-020)
-- Heading pattern: observed serif application for major headings (`h1`, `h2`, `h3`). (Evidence: E-021)
-
-### Typographic Intent [Inference]
-- Serif for narrative authority and editorial character.
-- Sans for utility text, metadata, and dense content readability.
-- Maintain strong contrast between hero/headline and support copy.
-
-Primary evidence basis: E-019, E-020, E-021.
-
-## Imagery and Composition
-
-### Observed Patterns [Verified]
-- Community event photography is central to storytelling. (Evidence: E-026)
-- Background treatments include textured grain and gradient haze. (Evidence: E-023)
-- Section blocks often juxtapose human portraits or gatherings with concise explanatory copy. (Evidence: E-023, E-026)
-
-### Generation Guidance [Inference]
-- Prefer real-world collaborative scenes over abstract AI iconography.
-- Use ambient overlays subtly; avoid overpowering the subject.
-- Keep CTAs visually clear and color-differentiated.
-
-Primary evidence basis: E-023, E-024, E-026.
-
-## Voice and Messaging
-
-### Core Voice [Verified]
-- People-forward, trust-oriented, globally inclusive, and action-oriented.
-- Language emphasizes forums, collaboration, and responsible coordination.
-
-Evidence group: E-002, E-003, E-026.
-
-### Voice Anchors [Verified]
-Use and reinforce phrases such as:
+### Approved anchor phrases
 - human layer
 - AI era
 - global community
 - builders and stakeholders
 - navigate technological progress
 
-Evidence group: E-002, E-003.
+### Avoid
+- fear-first AI framing
+- unsupported superlatives
+- exclusionary language
+- buzzword-heavy filler
 
-### Voice Guardrails [Inference]
-- Do not use fear-first framing or speculative doom language.
-- Avoid empty superlatives without concrete grounding.
-- Prefer clear, concise, credible language over buzzword-heavy copy.
+## 4) Logo System [Verified + Operational]
 
-Primary evidence basis: E-003, E-024, E-026.
+### Canonical files
+- `assets/logos/logo.svg`
+- `assets/logos/logo-white.svg`
+- `assets/logos/wordmark.svg`
+- `assets/logos/wordmark-white.svg`
 
-## Motion Principles
+### Usage rules
+- Do not stretch, crop, skew, or recolor logos.
+- Use white variants on dark/photo-heavy backgrounds.
+- Use color variants on light/neutral backgrounds.
+- Minimum widths: mark 24px, wordmark 120px.
+- Clearspace defaults are operational values in `tokens.brand-tokens.json`.
 
-### Observed Technical Signals [Verified]
-The live CSS includes extensive motion tokens and spring/easing variables, suggesting deliberate animated interaction patterns. (Evidence: E-025)
+## 5) Color Guide
 
-### Operational Motion Rules [Inference]
-- Prioritize legibility and hierarchy over novelty.
-- Use smooth transitions with restrained timing.
-- Honor reduced-motion user preferences.
+### Core brand colors [Verified]
+- AIC Orange: `#ff640d`
+- Wordmark Slate: `#374151`
+- White: `#ffffff`
+- Near Black: `#0c0a09`
 
-Primary evidence basis: E-025.
+### Theme values [Verified]
+- Light: background `#f5f5f4`, foreground `#292524`, accent `#ebebea`
+- Dark: background `#0c0a09`, foreground `#f5f5f4`, accent `#3b3835`
 
-## Accessibility Requirements
+### Color rules [Operational]
+- Use orange for emphasis and primary CTA only.
+- Keep neutral tones dominant.
+- Ensure WCAG 2.2 AA contrast for body text and CTA labels.
 
-### Required [Inference]
-- Maintain WCAG 2.2 AA text contrast for all generated assets.
-- Ensure CTA labels and body copy remain readable over image/video backgrounds.
-- Provide reduced-motion alternatives for motion-heavy deliverables.
+## 6) Font Guide
 
-Rationale: accessibility requirements are implementation standards for generation workflows; explicit brand accessibility documentation was not discovered publicly.
-Primary evidence basis: E-022 and observed tokenized theme structure (E-010 to E-017).
+### Families
+- Serif primary: Georgia Pro (licensed, client-provided local files included)
+- Serif fallback: Source Serif 4 (bundled)
+- Sans primary: Open Sans (bundled)
 
-## Anti-Patterns
+### Runtime policy
+- Load fonts from `assets/fonts` only.
+- If Georgia Pro is unavailable, map all serif roles to Source Serif 4.
+- Preserve token-defined sizes, line-height, and letter-spacing during substitution.
 
-### Do Not [Inference]
-- Distort, recolor, or stylize logo vectors beyond approved variants.
-- Replace editorial typography with generic, overly geometric defaults.
-- Overload layouts with excessive visual effects.
-- Use copy that frames AI progress as detached from people.
+## 7) Text Sizing and Scaling
 
-Primary evidence basis: E-003, E-005, E-006, E-008, E-009.
+Use `typography_scale.roles` as strict style roles.
 
-## Cross-Reference Index
-- Machine-readable tokens: `tokens/brand-tokens.json`
-- Token schema: `tokens/brand-tokens.schema.json`
-- Agent orchestration: `ai-style-guide.md`
-- Remotion scene grammar: `remotion/scene-system.md`
-- Source traceability: `evidence/source-map.md`
+### Role summary (mobile/tablet/desktop px)
+- Display: 44/60/84
+- H1: 34/48/64
+- H2: 28/36/48
+- H3: 24/30/40
+- H4: 20/24/30
+- Body L: 18/19/20
+- Body: 16/17/18
+- Body S: 14/15/16
+- Label: 12/13/14
+- Caption: 11/12/13
+
+## 8) Formatting Instructions
+
+### Headings
+- 3-12 words preferred.
+- Use title case for major headings.
+- Avoid end punctuation unless required.
+
+### Body
+- Target 45-75 characters per line.
+- One idea per paragraph.
+
+### CTA
+- 2-5 words.
+- Start with an action verb.
+
+## 9) Layout Rules
+
+- Base spacing unit: 4px
+- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64, 96
+- Radius scale: 6, 10, 16, 24
+- Container max width: 1280px
+- Grid: 12 columns
+- Safe zone defaults: top 8%, bottom 12%, sides 6%
+
+## 10) Channel Systems
+
+### Remotion
+Use:
+- `remotion/scene-system.md`
+- `prompts/remotion-brand-prompt.md`
+- `tokens.remotion`
+
+### Slides
+Use:
+- `slides/slide-system.md`
+- `prompts/slides-brand-prompt.md`
+- `tokens.slides`
+
+### Documents
+Use:
+- `documents/document-system.md`
+- `prompts/document-brand-prompt.md`
+- `tokens.documents`
+
+## 11) Unknowns (Explicit)
+
+- No publicly discovered official clearspace formula from brand owners.
+- No publicly discovered official print/Pantone guide.
+- No publicly discovered official published motion handbook.
+
+Operational defaults are included and labeled as operational.

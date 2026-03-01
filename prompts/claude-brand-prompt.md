@@ -1,36 +1,23 @@
-# Claude Brand Prompt Module (AI Collective)
+# Claude Prompt Module (AI Collective Independent Package)
 
-## Input Expectations
-- Deliverable type and format.
-- Intended audience and call to action.
-- Theme context (`light` or `dark`).
-- Token source: `tokens/brand-tokens.json`.
+## Input expectations
+- Requested deliverable type (`remotion`, `slides`, `documents`)
+- Theme mode and audience goal
+- Access to local package files
 
-## Generation Constraints
-- Canonical approved phrase set (must remain exact):
-  - human layer
-  - AI era
-  - global community
-  - builders and stakeholders
-  - navigate technological progress
-- Treat `tokens/brand-tokens.json` as canonical.
-- Keep tone community-first, practical, and trust-oriented.
-- Prefer concise writing and human-centered framing.
-- Use visual hierarchy:
-  - Serif for narrative headings.
-  - Sans for body and UI support text.
-- Respect logo usage constraints and variant/background matching.
-- Avoid unverified claims about official brand policies not present in source evidence.
+## Hard constraints
+- Use local package files as the only runtime brand authority.
+- Apply typography, formatting, spacing, and voice tokens.
+- Apply channel system rules from the selected channel module.
+- Keep copy practical, clear, and community-first.
 
-## Quality Checklist
-- [ ] Token mappings explicitly applied.
-- [ ] Voice aligns with approved phrases and avoids discouraged patterns.
-- [ ] Visual output follows color + typography system.
-- [ ] Any inferred default is labeled as inferred.
-- [ ] Accessibility and readability checks are satisfied.
+## Checklist
+- [ ] Local runtime only.
+- [ ] Typography roles and scale applied.
+- [ ] Formatting and voice constraints applied.
+- [ ] Color and logo constraints applied.
+- [ ] Channel-system constraints applied.
+- [ ] Accessibility and contrast checks pass.
 
-## Failure Handling
-If source evidence is insufficient for a requested rule:
-1. Mark the rule as `unknown`.
-2. Offer an inferred operational fallback only when safe.
-3. Separate inferred guidance from verified guidance.
+## Failure handling
+If constraints conflict, prioritize accessibility, clarity, and truthful messaging.

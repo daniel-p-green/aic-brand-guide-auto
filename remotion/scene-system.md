@@ -1,68 +1,38 @@
-# AI Collective Remotion Scene System
+# AI Collective Remotion Scene System (Independent)
 
-Version: 1.0.0  
-Token dependency: `tokens/brand-tokens.json`
+Token source: `tokens/brand-tokens.json`  
+Theme classes: `tokens/brand-theme.css`
 
-## Scene Grammar
-Use this grammar for modular video assembly:
-- `S0 Hook`: quick signal of mission + human-centered framing.
-- `S1 Context`: establish domain, chapter, or event relevance.
-- `S2 Proof`: show people, outcomes, or community credibility.
-- `S3 Invitation`: direct CTA toward joining, attending, or collaborating.
+## Scene grammar
+- S0 Hook (0-4s)
+- S1 Context (4-12s)
+- S2 Proof (12-24s)
+- S3 CTA (24-30s)
 
-## Canonical 30s Timing Blueprint
-- S0 Hook: 0s-4s
-- S1 Context: 4s-12s
-- S2 Proof: 12s-24s
-- S3 Invitation: 24s-30s
+## Type role mapping
+- Hook headline: `display` or `h1`
+- Section heading: `h2`/`h3`
+- Body overlays: `body`/`body_s`
+- Metadata and chips: `label`/`caption`
 
-## Archetypes
+## Formatting map
+- Heading text follows `formatting.heading_rules`
+- Body text follows `formatting.body_rules`
+- CTA text follows `formatting.cta_rules`
 
-### Archetype A: Community Teaser
-- S0: Mission statement over high-energy event footage.
-- S1: Global chapter presence and people-first copy.
-- S2: Testimonials, event moments, or partner logos.
-- S3: CTA (`Join The Collective`, `Find An Event`).
+## Motion map
+- micro interactions: 180ms
+- standard transitions: 420ms
+- hero transitions: 800ms
 
-### Archetype B: Partner Spotlight
-- S0: Partner + AI Collective framing.
-- S1: Why collaboration matters.
-- S2: Outcome montage (forums, demos, stakeholder exchange).
-- S3: CTA (`Partner With Us`).
+Use restrained transitions and maintain text readability at all times.
 
-### Archetype C: Chapter Launch
-- S0: City/chapter identifier + mission.
-- S1: Local relevance and community role.
-- S2: Event clips or leader highlights.
-- S3: CTA (`Start a Chapter` / `Join a Local Team`).
+## Asset rules
+- Use only local logo files from `assets/logos`.
+- White logos for dark scenes, color logos for light scenes.
+- Never distort vector aspect ratio.
 
-## Typography and Layout Rules
-- Heading style: serif-led, concise, high contrast.
-- Supporting text: sans, shorter line lengths.
-- Keep critical text within configured safe zone.
-- Avoid dense multiline overlays over high-motion footage.
-
-## Transition Rules
-- Preferred: soft fades, gentle slide-ins, restrained scale.
-- Avoid abrupt whip transitions unless used sparingly in hook.
-- Keep transitions short enough to protect message time budget.
-
-## Caption Treatments
-- Use clean sans captions with background support when needed.
-- Prioritize semantic beats over verbatim filler.
-- Keep caption blocks concise and center-stable for readability.
-
-## Audio Direction
-- Clean, modern, minimal bed.
-- Voiceover should be clear and foregrounded.
-- Use energy lift near CTA without masking final message.
-
-## Safe Zone Defaults
-- Top: 8%
-- Bottom: 12%
-- Sides: 6%
-
-## Failure Modes and Mitigations
-- If text becomes unreadable: increase overlay opacity and reduce background motion.
-- If pacing feels rushed: remove one intermediate beat, preserve hook+proof+CTA.
-- If output feels off-brand: re-check token compliance, then voice checklist.
+## Safe-zone defaults
+- Top 8%
+- Bottom 12%
+- Sides 6%
