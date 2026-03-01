@@ -1,112 +1,119 @@
 {
   "meta": {
     "brand_name": "The AI Collective",
+    "version": "2.1.0",
     "source_snapshot_date": "2026-02-28",
-    "source_urls": [
-      "https://www.aicollective.com",
-      "https://www.aicollective.com/images/brand/Logo.svg",
-      "https://www.aicollective.com/images/brand/Logo-White.svg",
-      "https://www.aicollective.com/images/brand/Wordmark.svg",
-      "https://www.aicollective.com/images/brand/Wordmark-White.svg"
-    ],
-    "ephemeral_source_urls": [
-      "https://www.aicollective.com/_next/static/css/2d1ac66977c42890.css",
-      "https://www.aicollective.com/_next/static/css/5cccc2448d0e2390.css"
-    ],
-    "version": "1.0.0",
-    "evidence_map_path": "evidence/source-map.md",
-    "source_refresh_procedure_path": "evidence/source-map.md#refresh-procedure-for-build-hashed-css-sources",
-    "local_capture_files": [
-      "evidence/captures/2026-02-28-css-token-extracts.md"
-    ],
-    "legal_notice_path": "NOTICE.md",
-    "confidence_policy": "Use only evidence-backed values as authoritative. Mark inferred operational defaults explicitly."
+    "runtime_independent": true,
+    "local_asset_root": "assets",
+    "evidence_path": "evidence/source-map.md",
+    "notes": "All runtime-critical assets and token rules are local-first. Website URLs are historical provenance only."
   },
   "logos": {
     "logo": {
-      "url": "https://www.aicollective.com/images/brand/Logo.svg",
+      "local_path": "assets/logos/logo.svg",
+      "source_url": "https://www.aicollective.com/images/brand/Logo.svg",
+      "sha256": "c55675f916cf424df1041018c4b64b4b1d8aea17ce50ff8818cc9baeeab76a0b",
       "viewBox": "0 0 700 844.38",
       "aspect_ratio": 0.828997,
-      "intended_background": "light",
       "primary_fill_hex": "#ff640d",
-      "confidence": "high"
+      "recommended_background": "light",
+      "min_width_px": 24,
+      "clearspace_rule": "Keep at least 0.5x logo height clear on all sides (operational rule)."
     },
     "logo_white": {
-      "url": "https://www.aicollective.com/images/brand/Logo-White.svg",
+      "local_path": "assets/logos/logo-white.svg",
+      "source_url": "https://www.aicollective.com/images/brand/Logo-White.svg",
+      "sha256": "150aaa600736de7b09885e17f04916eac5ecdececda1f008ad3d7235d8f1b9a0",
       "viewBox": "0 0 700 844.38",
       "aspect_ratio": 0.828997,
-      "intended_background": "dark",
       "primary_fill_hex": "#ffffff",
-      "confidence": "high"
+      "recommended_background": "dark",
+      "min_width_px": 24,
+      "clearspace_rule": "Keep at least 0.5x logo height clear on all sides (operational rule)."
     },
     "wordmark": {
-      "url": "https://www.aicollective.com/images/brand/Wordmark.svg",
+      "local_path": "assets/logos/wordmark.svg",
+      "source_url": "https://www.aicollective.com/images/brand/Wordmark.svg",
+      "sha256": "665ad302cb7fdb10e9d7269dc225f79930c9cc91ea9f9b550a37471f8a63311f",
       "viewBox": "0 0 1290.68 620.57",
       "aspect_ratio": 2.079881,
-      "intended_background": "light",
       "primary_fill_hex": "#374151",
-      "confidence": "high"
+      "recommended_background": "light",
+      "min_width_px": 120,
+      "clearspace_rule": "Keep at least cap-height of the wordmark clear on all sides (operational rule)."
     },
     "wordmark_white": {
-      "url": "https://www.aicollective.com/images/brand/Wordmark-White.svg",
+      "local_path": "assets/logos/wordmark-white.svg",
+      "source_url": "https://www.aicollective.com/images/brand/Wordmark-White.svg",
+      "sha256": "3ee3173a0d14741a4b021ea095b84edaf21b27e4a5b9303418a061bf3922f136",
       "viewBox": "0 0 1290.68 620.57",
       "aspect_ratio": 2.079881,
-      "intended_background": "dark",
       "primary_fill_hex": "#ffffff",
-      "confidence": "high"
+      "recommended_background": "dark",
+      "min_width_px": 120,
+      "clearspace_rule": "Keep at least cap-height of the wordmark clear on all sides (operational rule)."
     }
   },
-  "color": {
-    "brand": {
-      "primary_hex": "#ff640d",
-      "wordmark_text_hex": "#374151",
-      "primary_hsl": "23 100% 53%",
-      "confidence": "high"
+  "colors": {
+    "core": {
+      "aic_orange": { "name": "AIC Orange", "hex": "#ff640d", "hsl": "23 100% 53%" },
+      "wordmark_slate": { "name": "Wordmark Slate", "hex": "#374151", "hsl": "215 19% 27%" },
+      "white": { "name": "White", "hex": "#ffffff", "hsl": "0 0% 100%" },
+      "black": { "name": "Near Black", "hex": "#0c0a09", "hsl": "20 14% 4%" }
     },
-    "light": {
-      "background": "60 5% 96%",
-      "foreground": "12 6% 15%",
-      "primary": "12 6% 15%",
-      "primary_foreground": "60 9% 98%",
-      "accent": "60 4% 92%",
-      "accent_foreground": "12 6% 15%",
-      "muted": "60 5% 96%",
-      "muted_foreground": "25 5% 45%",
-      "border": "20 6% 90%",
-      "input": "20 6% 90%",
-      "ring": "12 6% 15%",
-      "radius": "1rem"
+    "theme": {
+      "light": {
+        "background": { "name": "Light Background", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        "foreground": { "name": "Light Foreground", "hex": "#292524", "hsl": "12 6% 15%" },
+        "primary": { "name": "Light Primary", "hex": "#292524", "hsl": "12 6% 15%" },
+        "primary_foreground": { "name": "Light Primary Foreground", "hex": "#fafaf9", "hsl": "60 9% 98%" },
+        "accent": { "name": "Light Accent", "hex": "#ebebea", "hsl": "60 4% 92%" },
+        "accent_foreground": { "name": "Light Accent Foreground", "hex": "#292524", "hsl": "12 6% 15%" },
+        "muted": { "name": "Light Muted", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        "muted_foreground": { "name": "Light Muted Foreground", "hex": "#78716c", "hsl": "25 5% 45%" },
+        "border": { "name": "Light Border", "hex": "#e8e7e5", "hsl": "20 6% 90%" },
+        "input": { "name": "Light Input", "hex": "#e8e7e5", "hsl": "20 6% 90%" },
+        "ring": { "name": "Light Ring", "hex": "#292524", "hsl": "12 6% 15%" }
+      },
+      "dark": {
+        "background": { "name": "Dark Background", "hex": "#0c0a09", "hsl": "20 14% 4%" },
+        "foreground": { "name": "Dark Foreground", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        "primary": { "name": "Dark Primary", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        "primary_foreground": { "name": "Dark Primary Foreground", "hex": "#0c0a09", "hsl": "20 14% 4%" },
+        "accent": { "name": "Dark Accent", "hex": "#3b3835", "hsl": "30 6% 22%" },
+        "accent_foreground": { "name": "Dark Accent Foreground", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        "muted": { "name": "Dark Muted", "hex": "#292524", "hsl": "12 6% 15%" },
+        "muted_foreground": { "name": "Dark Muted Foreground", "hex": "#a8a29e", "hsl": "24 5% 64%" },
+        "border": { "name": "Dark Border", "hex": "#292524", "hsl": "12 6% 15%" },
+        "input": { "name": "Dark Input", "hex": "#292524", "hsl": "12 6% 15%" },
+        "ring": { "name": "Dark Ring", "hex": "#d6d3d1", "hsl": "24 6% 83%" }
+      }
     },
-    "dark": {
-      "background": "20 14% 4%",
-      "foreground": "60 5% 96%",
-      "primary": "60 5% 96%",
-      "primary_foreground": "20 14% 4%",
-      "accent": "30 6% 22%",
-      "accent_foreground": "60 5% 96%",
-      "muted": "12 6% 15%",
-      "muted_foreground": "24 5% 64%",
-      "border": "12 6% 15%",
-      "input": "12 6% 15%",
-      "ring": "24 6% 83%",
-      "radius": "1rem"
+    "ramps": {
+      "orange": [
+        { "name": "Orange 300", "hex": "#ff915a", "hsl": "20 100% 67%" },
+        { "name": "Orange 500", "hex": "#ff640d", "hsl": "23 100% 53%" },
+        { "name": "Orange 700", "hex": "#ea580c", "hsl": "21 90% 48%" }
+      ],
+      "neutral": [
+        { "name": "Neutral 100", "hex": "#f5f5f4", "hsl": "60 5% 96%" },
+        { "name": "Neutral 500", "hex": "#78716c", "hsl": "25 5% 45%" },
+        { "name": "Neutral 900", "hex": "#292524", "hsl": "12 6% 15%" }
+      ]
     },
-    "semantic": {
-      "success_hsl": "145 63% 40%",
-      "warning_hsl": "38 92% 50%",
-      "danger_hsl": "0 84% 60%",
-      "info_hsl": "211 90% 56%",
-      "unknown_policy": "Semantic values above are inferred operational defaults for generated assets and are not claimed as official published brand values."
-    }
+    "usage_rules": [
+      "Use AIC Orange for primary emphasis and CTAs, not for long-form body text.",
+      "Use light theme tokens for bright backgrounds and dark theme tokens for low-luminance surfaces.",
+      "Maintain strong foreground/background contrast in every theme.",
+      "Keep neutral surfaces dominant and use orange as an accent, not a background default."
+    ]
   },
   "typography": {
-    "sans": "Open Sans",
-    "serif": "georgiaPro",
-    "heading_family": "georgiaPro",
-    "body_family": "Open Sans",
-    "fallbacks": {
-      "sans": ["SF Pro Display", "ui-sans-serif", "system-ui", "sans-serif"],
-      "serif": ["Georgia", "ui-serif", "Cambria", "Times New Roman", "Times", "serif"]
+    "families": {
+      "serif_primary": "Georgia Pro",
+      "serif_fallback": "Source Serif 4",
+      "sans_primary": "Open Sans",
+      "sans_fallback": ["Inter", "system-ui", "Segoe UI", "Arial", "sans-serif"]
     },
     "weights": {
       "light": 300,
@@ -115,33 +122,196 @@
       "bold": 700,
       "black": 900
     },
-    "confidence": "high"
+    "delivery": {
+      "mode": "local-first",
+      "font_readme": "assets/fonts/README.md",
+      "substitution_policy": "Use Georgia Pro from local licensed files when available. If unavailable, use Source Serif 4 for all serif roles while preserving sizing and line-height values. Map semibold serif roles to bold weight when a semibold cut is not present.",
+      "local_files": [
+        {
+          "family": "Georgia Pro Regular",
+          "style": "normal",
+          "path": "assets/fonts/georgia-pro/GeorgiaPro-Regular.ttf",
+          "sha256": "4f54eb299fccea7f103edeb0d92437359bfd4441811d53222b82b335369f6218"
+        },
+        {
+          "family": "Georgia Pro Italic",
+          "style": "italic",
+          "path": "assets/fonts/georgia-pro/GeorgiaPro-Italic.ttf",
+          "sha256": "7758840cacb7382db65aa038e9fd1194d077ba9b55fe748f9cfb196d2773ac4e"
+        },
+        {
+          "family": "Georgia Pro Bold",
+          "style": "normal",
+          "path": "assets/fonts/georgia-pro/GeorgiaPro-Bold.ttf",
+          "sha256": "1cfa9abd55be746c798c22ef4eba88fce82257934897404be2dae53ed0a4142a"
+        },
+        {
+          "family": "Georgia Pro Bold Italic",
+          "style": "italic",
+          "path": "assets/fonts/georgia-pro/GeorgiaPro-BoldItalic.ttf",
+          "sha256": "a2036878f47d0da1765869a8747cfb0079b6125776675bad352468b59ca4493d"
+        },
+        {
+          "family": "Open Sans",
+          "style": "normal",
+          "path": "assets/fonts/open-sans/OpenSans-VariableFont_wdth,wght.ttf",
+          "sha256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878"
+        },
+        {
+          "family": "Open Sans",
+          "style": "italic",
+          "path": "assets/fonts/open-sans/OpenSans-Italic-VariableFont_wdth,wght.ttf",
+          "sha256": "fe269381e992f32e135801740998544d6235061e37c93ec067ad2be3edd5b17b"
+        },
+        {
+          "family": "Source Serif 4",
+          "style": "normal",
+          "path": "assets/fonts/source-serif-4/SourceSerif4-VariableFont_opsz,wght.ttf",
+          "sha256": "97b2d4da6e3cb494b5a1e66ae176914d852ccabef49e0c02c0df25f3e39aca0b"
+        },
+        {
+          "family": "Source Serif 4",
+          "style": "italic",
+          "path": "assets/fonts/source-serif-4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf",
+          "sha256": "15fbc7e4679489a501998c3669272637a6646388ef7e4bd77eebb5bf967a1f42"
+        }
+      ],
+      "license_files": [
+        {
+          "family": "Open Sans",
+          "license": "SIL Open Font License 1.1",
+          "path": "assets/fonts/open-sans/OFL.txt",
+          "sha256": "fbbbcfef55318de350562559b671360de6d597112ecc5c73881b05092db89602"
+        },
+        {
+          "family": "Source Serif 4",
+          "license": "SIL Open Font License 1.1",
+          "path": "assets/fonts/source-serif-4/OFL.txt",
+          "sha256": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9"
+        }
+      ]
+    }
   },
-  "motion": {
-    "principles": [
-      "Use restrained cinematic movement over busy kinetic effects.",
-      "Favor fade/slide/scale combinations with clear hierarchy.",
-      "Preserve content legibility during transitions."
+  "typography_scale": {
+    "base_unit_px": 4,
+    "breakpoints_px": {
+      "mobile": 0,
+      "tablet": 768,
+      "desktop": 1200
+    },
+    "roles": {
+      "display": {
+        "family": "serif",
+        "weight": 700,
+        "line_height": 1.02,
+        "letter_spacing": -0.02,
+        "size_px": { "mobile": 44, "tablet": 60, "desktop": 84 }
+      },
+      "h1": {
+        "family": "serif",
+        "weight": 700,
+        "line_height": 1.08,
+        "letter_spacing": -0.015,
+        "size_px": { "mobile": 34, "tablet": 48, "desktop": 64 }
+      },
+      "h2": {
+        "family": "serif",
+        "weight": 700,
+        "line_height": 1.1,
+        "letter_spacing": -0.012,
+        "size_px": { "mobile": 28, "tablet": 36, "desktop": 48 }
+      },
+      "h3": {
+        "family": "serif",
+        "weight": 600,
+        "line_height": 1.14,
+        "letter_spacing": -0.008,
+        "size_px": { "mobile": 24, "tablet": 30, "desktop": 40 }
+      },
+      "h4": {
+        "family": "serif",
+        "weight": 600,
+        "line_height": 1.18,
+        "letter_spacing": -0.004,
+        "size_px": { "mobile": 20, "tablet": 24, "desktop": 30 }
+      },
+      "body_l": {
+        "family": "sans",
+        "weight": 400,
+        "line_height": 1.55,
+        "letter_spacing": 0,
+        "size_px": { "mobile": 18, "tablet": 19, "desktop": 20 }
+      },
+      "body": {
+        "family": "sans",
+        "weight": 400,
+        "line_height": 1.6,
+        "letter_spacing": 0,
+        "size_px": { "mobile": 16, "tablet": 17, "desktop": 18 }
+      },
+      "body_s": {
+        "family": "sans",
+        "weight": 400,
+        "line_height": 1.55,
+        "letter_spacing": 0,
+        "size_px": { "mobile": 14, "tablet": 15, "desktop": 16 }
+      },
+      "label": {
+        "family": "sans",
+        "weight": 600,
+        "line_height": 1.3,
+        "letter_spacing": 0.01,
+        "size_px": { "mobile": 12, "tablet": 13, "desktop": 14 }
+      },
+      "caption": {
+        "family": "sans",
+        "weight": 400,
+        "line_height": 1.35,
+        "letter_spacing": 0.01,
+        "size_px": { "mobile": 11, "tablet": 12, "desktop": 13 }
+      }
+    }
+  },
+  "layout_scale": {
+    "spacing_px": [4, 8, 12, 16, 24, 32, 48, 64, 96],
+    "radius_px": [6, 10, 16, 24],
+    "container_max_px": 1280,
+    "grid_columns": 12,
+    "safe_zone_percent": {
+      "top": 8,
+      "bottom": 12,
+      "sides": 6
+    }
+  },
+  "formatting": {
+    "heading_rules": [
+      "Use title case for major headings unless sentence case improves clarity in long statements.",
+      "Keep headings between 3 and 12 words.",
+      "Avoid punctuation at the end of headings unless a question mark is semantically necessary."
     ],
-    "durations_ms": {
-      "micro": 180,
-      "standard": 420,
-      "hero": 800
-    },
-    "easing": {
-      "default": "cubic-bezier(0.165,0.84,0.44,1)",
-      "inference_note": "Duration/easing values are inferred from observed CSS motion variables and tuned for operational consistency."
-    },
-    "reduced_motion_policy": "Honor prefers-reduced-motion by replacing non-essential transform animation with opacity-only transitions.",
-    "confidence": "medium"
+    "body_rules": [
+      "Use concise, plain language with specific nouns and verbs.",
+      "Preferred paragraph width: 45-75 characters per line for long-form reading.",
+      "Use one idea per paragraph for public-facing pages."
+    ],
+    "cta_rules": [
+      "Start CTA text with an action verb.",
+      "Keep CTA text to 2-5 words.",
+      "Primary CTA uses orange ramp 500 with high-contrast text."
+    ],
+    "punctuation_rules": [
+      "Use standard sentence punctuation and avoid excessive exclamation marks.",
+      "Avoid stacked punctuation and avoid forced slogan punctuation.",
+      "Use en dash or comma for appositive breaks, not repeated hyphen chains."
+    ],
+    "line_length_rules": [
+      "Display and H1 can exceed 12 words only for explicit quote-based hero statements.",
+      "Body text should avoid lines longer than 90 characters.",
+      "Caption lines should target 28-42 characters in video contexts."
+    ]
   },
   "voice": {
-    "tone": [
-      "community-first",
-      "trust-oriented",
-      "forward-looking",
-      "grounded and practical"
-    ],
+    "tone": ["community-first", "trust-oriented", "forward-looking", "grounded and practical"],
     "approved_phrases": [
       "human layer",
       "AI era",
@@ -150,22 +320,23 @@
       "navigate technological progress"
     ],
     "discouraged_patterns": [
-      "hype-only superlatives without proof",
-      "fear-forward AI framing",
-      "exclusive gatekeeping language",
-      "excessive technical jargon in public-facing copy"
-    ],
-    "do": [
-      "Center people, forums, and collaboration.",
-      "Ground claims in observable community outcomes.",
-      "Use concise, optimistic, credible language."
-    ],
-    "dont": [
-      "Portray AI progress as detached from human responsibility.",
-      "Use adversarial or tribal framing.",
-      "Over-ornament copy with buzzwords."
-    ],
-    "confidence": "high"
+      "fear-first AI narratives",
+      "empty superlatives without proof",
+      "tribal or exclusionary language",
+      "buzzword-dense filler"
+    ]
+  },
+  "motion": {
+    "durations_ms": { "micro": 180, "standard": 420, "hero": 800 },
+    "easing": {
+      "default": "cubic-bezier(0.165,0.84,0.44,1)",
+      "alt": "linear(0,0.0014,0.0053 1.02%,0.0126,0.0227 2.18%,0.0517 3.41%,0.094 4.79%,0.1865 7.26%,0.4182 12.77%,0.5246 15.46%,0.6249,0.7112,0.7831 23.95%,0.8146 25.4%,0.844,0.8699 28.45%,0.8935,0.9139 31.64%,0.932,0.9473,0.9601 36.65%,0.9714 38.47%,0.9808 40.35%,0.9948 44.49%,1.0031 49.43%,1.0057 53.35%,1.0063 58.14%,1.0014 80.78%,1.0001 99.94%)"
+    },
+    "principles": [
+      "Use motion to clarify hierarchy and narrative flow.",
+      "Do not animate every element simultaneously.",
+      "Respect reduced motion preference with opacity-first alternatives."
+    ]
   },
   "remotion": {
     "defaults": {
@@ -178,25 +349,61 @@
       "content_seconds": 20,
       "cta_seconds": 6
     },
-    "title_rules": [
-      "Use serif-led titles (georgiaPro or approved fallback) for narrative emphasis.",
-      "Keep title lines to 3-9 words when possible.",
-      "Ensure title contrast remains AA-compliant against moving backgrounds."
-    ],
-    "caption_rules": [
-      "Set captions in sans family for readability.",
-      "Avoid full-width lower-third blocks; use concise balanced lines.",
-      "Keep captions synchronized with semantic beats, not every filler word."
-    ],
-    "safe_zone": {
+    "text_safe_zone": {
       "top_percent": 8,
       "bottom_percent": 12,
       "side_percent": 6
+    }
+  },
+  "slides": {
+    "defaults": {
+      "aspect_ratio": "16:9",
+      "max_bullets": 5,
+      "max_words_per_slide": 55
     },
-    "audio_direction": [
-      "Use modern, minimal, forward-leaning music beds.",
-      "Prefer clean voiceover with light spatial texture.",
-      "Avoid aggressive drops that overpower message clarity."
+    "layout_rules": [
+      "Use a two-zone layout: headline zone in top third and content zone below.",
+      "Keep outer margin at least 7% on all sides in 16:9 decks.",
+      "Reserve bottom-right corner for logo or page marker, never both."
+    ],
+    "text_rules": [
+      "One core idea per slide.",
+      "Use display or h1 for title slides and h2/h3 for section slides.",
+      "Body bullets use body or body_s roles and stay under max_bullets."
+    ],
+    "transition_rules": [
+      "Use dissolve or simple push transitions only.",
+      "Transition duration should stay between 300ms and 500ms.",
+      "Do not chain multiple animated effects on the same element."
+    ]
+  },
+  "documents": {
+    "defaults": {
+      "page_size": "Letter",
+      "body_role": "body",
+      "line_spacing": 1.35
+    },
+    "heading_map": {
+      "title": "h1",
+      "h1": "h2",
+      "h2": "h3",
+      "h3": "h4",
+      "caption": "caption"
+    },
+    "paragraph_rules": [
+      "Target 60-80 characters per line for long-form documents.",
+      "Use left-aligned text and avoid justified paragraphs.",
+      "Separate major sections with at least one spacing step from layout_scale."
+    ],
+    "list_rules": [
+      "Use parallel sentence structure in lists.",
+      "Limit lists to seven items unless a spec requires more.",
+      "Keep bullet text concise and action-oriented where possible."
+    ],
+    "callout_rules": [
+      "Use accent surface backgrounds for notes, not orange fills.",
+      "Callout headings should map to label role.",
+      "Limit callout width to 80% of text column width."
     ]
   }
 }

@@ -1,38 +1,27 @@
-# Codex Brand Prompt Module (AI Collective)
+# Codex Prompt Module (AI Collective Independent Package)
 
-## Input Expectations
-- Target asset type and channel (web/social/video/slide).
-- Target theme (`light` or `dark`).
-- Audience and outcome.
-- Available token file: `tokens/brand-tokens.json`.
+## Input expectations
+- Target channel: `remotion`, `slides`, or `documents`
+- Theme: `light` or `dark`
+- Audience and CTA objective
+- Access to local brand package files
 
-## Generation Constraints
-- Canonical approved phrase set (must remain exact):
-  - human layer
-  - AI era
-  - global community
-  - builders and stakeholders
-  - navigate technological progress
-- Read token values before generating output.
-- Use approved brand voice and avoid discouraged patterns.
-- Use serif-led headings and sans-led utility/body text.
-- Select logo variant based on background:
-  - Dark background -> white logo/wordmark variants.
-  - Light background -> default color variants.
-- Preserve logo vector proportions and avoid visual effects on marks.
-- Keep design atmosphere editorial + modern, with restrained grain/gradient ambience.
+## Hard constraints
+- Load only local files for runtime brand decisions.
+- Read all mandatory token sections, including `slides` and `documents`.
+- Enforce typography roles from `typography_scale.roles`.
+- Enforce formatting rules from `formatting`.
+- Enforce contrast and logo rules.
+- Enforce channel-specific rules from the matching channel section.
 
-## Quality Checklist
-- [ ] Required token keys resolved.
-- [ ] Logo variant is correct for background.
-- [ ] Heading/body typography mapping follows tokens.
-- [ ] Copy includes at least one approved phrase where natural.
-- [ ] No discouraged language patterns.
-- [ ] Contrast appears WCAG 2.2 AA-safe.
-- [ ] Output metadata includes inference disclosure if any inferred token used.
+## Checklist
+- [ ] Local-first rule satisfied.
+- [ ] Token sections fully loaded.
+- [ ] Typography and formatting rules applied.
+- [ ] Contrast check passed.
+- [ ] Logo variant selection valid.
+- [ ] Channel-specific system rules applied.
+- [ ] Output metadata block included.
 
-## Failure Handling
-If a required token is missing or contradictory:
-1. Stop generation.
-2. Return `incomplete-token-state` with missing keys.
-3. Provide a minimal remediation list.
+## Failure handling
+If tokens, assets, or integrity checks fail, return `incomplete-token-state` and stop.

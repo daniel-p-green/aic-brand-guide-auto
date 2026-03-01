@@ -32,6 +32,10 @@ Confidence scale: High (direct literal), Medium (strongly implied by multiple di
 | E-024 | CTA tone | `Join The Collective`, `Find An Event`, `Learn More` | https://www.aicollective.com | 2026-02-28 | High | Direct UI labels. |
 | E-025 | Motion style hint | Motion utility presets + spring variables in CSS | https://www.aicollective.com/_next/static/css/5cccc2448d0e2390.css | 2026-02-28 | Medium | Direct token presence; exact authored rationale inferred. |
 | E-026 | Community-first framing | `forums worldwide`, `conversations among peers`, `stakeholders` | https://www.aicollective.com | 2026-02-28 | High | Hero/about/community copy. |
+| E-027 | Open Sans licensing baseline | SIL OFL package for Open Sans is publicly distributable | https://github.com/google/fonts/tree/main/ofl/opensans | 2026-02-28 | High | Used for local runtime font bundling and offline operation. |
+| E-028 | Source Serif 4 licensing baseline | SIL OFL package for Source Serif 4 is publicly distributable | https://github.com/google/fonts/tree/main/ofl/sourceserif4 | 2026-02-28 | High | Used as local serif fallback when Georgia Pro is unavailable. |
+| E-029 | CTA contrast enforcement | `#0c0a09` on `#ff640d` exceeds WCAG AA (6.66:1) while white does not | local calculation from token colors | 2026-02-28 | High | Enforced in package validator and theme token `--aic-cta-fg`. |
+| E-030 | Georgia Pro local availability | Georgia regular/italic/bold/bold-italic files available in local AI Collective font folder | local path: `/Users/danielgreen/Library/Mobile Documents/com~apple~CloudDocs/AI Collective/Fonts` | 2026-02-28 | High | Used as local licensed primary serif in this package. |
 
 ## Unknowns (Explicitly Not Invented)
 

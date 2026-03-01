@@ -1,57 +1,51 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:aic-brand-guide:brand-tokens:1.0.0",
-  "title": "AI Collective Brand Tokens",
+  "$id": "https://aic.local/schemas/brand-tokens.schema.json",
+  "title": "AI Collective Independent Brand Tokens",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "meta",
     "logos",
-    "color",
+    "colors",
     "typography",
-    "motion",
+    "typography_scale",
+    "layout_scale",
+    "formatting",
     "voice",
-    "remotion"
+    "motion",
+    "remotion",
+    "slides",
+    "documents"
   ],
-  "additionalProperties": false,
   "properties": {
     "meta": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "brand_name",
+        "version",
         "source_snapshot_date",
-        "source_urls",
-        "version"
+        "runtime_independent",
+        "local_asset_root"
       ],
-      "additionalProperties": false,
       "properties": {
-        "brand_name": { "type": "string", "minLength": 1 },
-        "source_snapshot_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
-        "source_urls": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "type": "string", "format": "uri" }
+        "brand_name": { "type": "string" },
+        "version": { "type": "string" },
+        "source_snapshot_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
-        "ephemeral_source_urls": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "type": "string", "format": "uri" }
-        },
-        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
-        "evidence_map_path": { "type": "string" },
-        "source_refresh_procedure_path": { "type": "string" },
-        "local_capture_files": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "type": "string", "minLength": 1 }
-        },
-        "legal_notice_path": { "type": "string" },
-        "confidence_policy": { "type": "string" }
+        "runtime_independent": { "type": "boolean" },
+        "local_asset_root": { "type": "string" },
+        "evidence_path": { "type": "string" },
+        "notes": { "type": "string" }
       }
     },
     "logos": {
       "type": "object",
-      "required": ["logo", "logo_white", "wordmark", "wordmark_white"],
       "additionalProperties": false,
+      "required": ["logo", "logo_white", "wordmark", "wordmark_white"],
       "properties": {
         "logo": { "$ref": "#/$defs/logoAsset" },
         "logo_white": { "$ref": "#/$defs/logoAsset" },
@@ -59,68 +53,84 @@
         "wordmark_white": { "$ref": "#/$defs/logoAsset" }
       }
     },
-    "color": {
+    "colors": {
       "type": "object",
-      "required": ["brand", "light", "dark", "semantic"],
       "additionalProperties": false,
+      "required": ["core", "theme", "ramps", "usage_rules"],
       "properties": {
-        "brand": {
+        "core": {
           "type": "object",
-          "required": ["primary_hex", "wordmark_text_hex", "primary_hsl", "confidence"],
           "additionalProperties": false,
+          "required": ["aic_orange", "wordmark_slate", "white", "black"],
           "properties": {
-            "primary_hex": { "$ref": "#/$defs/hexColor" },
-            "wordmark_text_hex": { "$ref": "#/$defs/hexColor" },
-            "primary_hsl": { "$ref": "#/$defs/hslTriplet" },
-            "confidence": { "$ref": "#/$defs/confidence" }
+            "aic_orange": { "$ref": "#/$defs/colorSpec" },
+            "wordmark_slate": { "$ref": "#/$defs/colorSpec" },
+            "white": { "$ref": "#/$defs/colorSpec" },
+            "black": { "$ref": "#/$defs/colorSpec" }
           }
         },
-        "light": { "$ref": "#/$defs/themePalette" },
-        "dark": { "$ref": "#/$defs/themePalette" },
-        "semantic": {
+        "theme": {
           "type": "object",
-          "required": ["success_hsl", "warning_hsl", "danger_hsl", "info_hsl", "unknown_policy"],
           "additionalProperties": false,
+          "required": ["light", "dark"],
           "properties": {
-            "success_hsl": { "$ref": "#/$defs/hslTriplet" },
-            "warning_hsl": { "$ref": "#/$defs/hslTriplet" },
-            "danger_hsl": { "$ref": "#/$defs/hslTriplet" },
-            "info_hsl": { "$ref": "#/$defs/hslTriplet" },
-            "unknown_policy": { "type": "string" }
+            "light": { "$ref": "#/$defs/themeSpec" },
+            "dark": { "$ref": "#/$defs/themeSpec" }
           }
+        },
+        "ramps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["orange", "neutral"],
+          "properties": {
+            "orange": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/colorSpec" },
+              "minItems": 3
+            },
+            "neutral": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/colorSpec" },
+              "minItems": 3
+            }
+          }
+        },
+        "usage_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
         }
       }
     },
     "typography": {
       "type": "object",
-      "required": [
-        "sans",
-        "serif",
-        "heading_family",
-        "body_family",
-        "fallbacks",
-        "weights",
-        "confidence"
-      ],
       "additionalProperties": false,
+      "required": ["families", "weights", "delivery"],
       "properties": {
-        "sans": { "type": "string" },
-        "serif": { "type": "string" },
-        "heading_family": { "type": "string" },
-        "body_family": { "type": "string" },
-        "fallbacks": {
+        "families": {
           "type": "object",
-          "required": ["sans", "serif"],
           "additionalProperties": false,
+          "required": [
+            "serif_primary",
+            "serif_fallback",
+            "sans_primary",
+            "sans_fallback"
+          ],
           "properties": {
-            "sans": { "type": "array", "items": { "type": "string" } },
-            "serif": { "type": "array", "items": { "type": "string" } }
+            "serif_primary": { "type": "string" },
+            "serif_fallback": { "type": "string" },
+            "sans_primary": { "type": "string" },
+            "sans_fallback": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
           }
         },
         "weights": {
           "type": "object",
-          "required": ["light", "regular", "semibold", "bold", "black"],
           "additionalProperties": false,
+          "required": ["light", "regular", "semibold", "bold", "black"],
           "properties": {
             "light": { "type": "integer" },
             "regular": { "type": "integer" },
@@ -129,25 +139,184 @@
             "black": { "type": "integer" }
           }
         },
-        "confidence": { "$ref": "#/$defs/confidence" }
+        "delivery": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "font_readme",
+            "substitution_policy",
+            "local_files",
+            "license_files"
+          ],
+          "properties": {
+            "mode": { "type": "string", "enum": ["local-first"] },
+            "font_readme": { "type": "string" },
+            "substitution_policy": { "type": "string" },
+            "local_files": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/fontAsset" },
+              "minItems": 2
+            },
+            "license_files": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/fontLicense" },
+              "minItems": 1
+            }
+          }
+        }
+      }
+    },
+    "typography_scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_unit_px", "breakpoints_px", "roles"],
+      "properties": {
+        "base_unit_px": { "type": "integer", "minimum": 1 },
+        "breakpoints_px": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mobile", "tablet", "desktop"],
+          "properties": {
+            "mobile": { "type": "integer" },
+            "tablet": { "type": "integer" },
+            "desktop": { "type": "integer" }
+          }
+        },
+        "roles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "display",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "body_l",
+            "body",
+            "body_s",
+            "label",
+            "caption"
+          ],
+          "properties": {
+            "display": { "$ref": "#/$defs/typeRole" },
+            "h1": { "$ref": "#/$defs/typeRole" },
+            "h2": { "$ref": "#/$defs/typeRole" },
+            "h3": { "$ref": "#/$defs/typeRole" },
+            "h4": { "$ref": "#/$defs/typeRole" },
+            "body_l": { "$ref": "#/$defs/typeRole" },
+            "body": { "$ref": "#/$defs/typeRole" },
+            "body_s": { "$ref": "#/$defs/typeRole" },
+            "label": { "$ref": "#/$defs/typeRole" },
+            "caption": { "$ref": "#/$defs/typeRole" }
+          }
+        }
+      }
+    },
+    "layout_scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spacing_px",
+        "radius_px",
+        "container_max_px",
+        "grid_columns",
+        "safe_zone_percent"
+      ],
+      "properties": {
+        "spacing_px": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 4
+        },
+        "radius_px": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 3
+        },
+        "container_max_px": { "type": "integer" },
+        "grid_columns": { "type": "integer" },
+        "safe_zone_percent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["top", "bottom", "sides"],
+          "properties": {
+            "top": { "type": "integer" },
+            "bottom": { "type": "integer" },
+            "sides": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "formatting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading_rules",
+        "body_rules",
+        "cta_rules",
+        "punctuation_rules",
+        "line_length_rules"
+      ],
+      "properties": {
+        "heading_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "body_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "cta_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "punctuation_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "line_length_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tone", "approved_phrases", "discouraged_patterns"],
+      "properties": {
+        "tone": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "approved_phrases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "discouraged_patterns": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
       }
     },
     "motion": {
       "type": "object",
-      "required": [
-        "principles",
-        "durations_ms",
-        "easing",
-        "reduced_motion_policy",
-        "confidence"
-      ],
       "additionalProperties": false,
+      "required": ["durations_ms", "easing", "principles"],
       "properties": {
-        "principles": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
         "durations_ms": {
           "type": "object",
-          "required": ["micro", "standard", "hero"],
           "additionalProperties": false,
+          "required": ["micro", "standard", "hero"],
           "properties": {
             "micro": { "type": "integer", "minimum": 1 },
             "standard": { "type": "integer", "minimum": 1 },
@@ -156,117 +325,207 @@
         },
         "easing": {
           "type": "object",
-          "required": ["default", "inference_note"],
           "additionalProperties": false,
+          "required": ["default", "alt"],
           "properties": {
             "default": { "type": "string" },
-            "inference_note": { "type": "string" }
+            "alt": { "type": "string" }
           }
         },
-        "reduced_motion_policy": { "type": "string" },
-        "confidence": { "$ref": "#/$defs/confidence" }
-      }
-    },
-    "voice": {
-      "type": "object",
-      "required": [
-        "tone",
-        "approved_phrases",
-        "discouraged_patterns",
-        "do",
-        "dont",
-        "confidence"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "tone": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "approved_phrases": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "discouraged_patterns": { "type": "array", "items": { "type": "string" } },
-        "do": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "dont": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "confidence": { "$ref": "#/$defs/confidence" }
+        "principles": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
       }
     },
     "remotion": {
       "type": "object",
-      "required": [
-        "defaults",
-        "scene_pacing",
-        "title_rules",
-        "caption_rules",
-        "safe_zone",
-        "audio_direction"
-      ],
       "additionalProperties": false,
+      "required": ["defaults", "scene_pacing", "text_safe_zone"],
       "properties": {
         "defaults": {
           "type": "object",
-          "required": ["fps", "duration_seconds", "aspect_ratios"],
           "additionalProperties": false,
+          "required": ["fps", "duration_seconds", "aspect_ratios"],
           "properties": {
             "fps": { "type": "integer", "minimum": 1 },
             "duration_seconds": { "type": "integer", "minimum": 1 },
             "aspect_ratios": {
               "type": "array",
-              "minItems": 1,
-              "items": { "type": "string", "enum": ["16:9", "9:16", "1:1", "4:5"] }
+              "items": { "type": "string" },
+              "minItems": 1
             }
           }
         },
         "scene_pacing": {
           "type": "object",
-          "required": ["hook_seconds", "content_seconds", "cta_seconds"],
           "additionalProperties": false,
+          "required": ["hook_seconds", "content_seconds", "cta_seconds"],
           "properties": {
             "hook_seconds": { "type": "integer", "minimum": 1 },
             "content_seconds": { "type": "integer", "minimum": 1 },
             "cta_seconds": { "type": "integer", "minimum": 1 }
           }
         },
-        "title_rules": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "caption_rules": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "safe_zone": {
+        "text_safe_zone": {
           "type": "object",
-          "required": ["top_percent", "bottom_percent", "side_percent"],
           "additionalProperties": false,
+          "required": ["top_percent", "bottom_percent", "side_percent"],
           "properties": {
-            "top_percent": { "type": "integer", "minimum": 0, "maximum": 50 },
-            "bottom_percent": { "type": "integer", "minimum": 0, "maximum": 50 },
-            "side_percent": { "type": "integer", "minimum": 0, "maximum": 50 }
+            "top_percent": { "type": "integer", "minimum": 0 },
+            "bottom_percent": { "type": "integer", "minimum": 0 },
+            "side_percent": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "slides": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defaults", "layout_rules", "text_rules", "transition_rules"],
+      "properties": {
+        "defaults": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["aspect_ratio", "max_bullets", "max_words_per_slide"],
+          "properties": {
+            "aspect_ratio": { "type": "string", "enum": ["16:9", "4:3"] },
+            "max_bullets": { "type": "integer", "minimum": 1 },
+            "max_words_per_slide": { "type": "integer", "minimum": 1 }
           }
         },
-        "audio_direction": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        "layout_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "text_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "transition_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "documents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "defaults",
+        "heading_map",
+        "paragraph_rules",
+        "list_rules",
+        "callout_rules"
+      ],
+      "properties": {
+        "defaults": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["page_size", "body_role", "line_spacing"],
+          "properties": {
+            "page_size": { "type": "string", "enum": ["Letter", "A4"] },
+            "body_role": { "type": "string", "enum": ["body", "body_l", "body_s"] },
+            "line_spacing": { "type": "number", "minimum": 1.0 }
+          }
+        },
+        "heading_map": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "h1", "h2", "h3", "caption"],
+          "properties": {
+            "title": { "type": "string" },
+            "h1": { "type": "string" },
+            "h2": { "type": "string" },
+            "h3": { "type": "string" },
+            "caption": { "type": "string" }
+          }
+        },
+        "paragraph_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "list_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "callout_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
       }
     }
   },
   "$defs": {
-    "confidence": {
-      "type": "string",
-      "enum": ["high", "medium", "low"]
-    },
-    "hexColor": {
-      "type": "string",
-      "pattern": "^#[0-9a-fA-F]{6}$"
-    },
-    "hslTriplet": {
+    "hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "hsl": {
       "type": "string",
       "pattern": "^[0-9]{1,3}(\\.[0-9]+)? [0-9]{1,3}(\\.[0-9]+)?% [0-9]{1,3}(\\.[0-9]+)?%$"
     },
-    "logoAsset": {
+    "colorSpec": {
       "type": "object",
-      "required": ["url", "viewBox", "aspect_ratio", "intended_background", "primary_fill_hex", "confidence"],
       "additionalProperties": false,
+      "required": ["name", "hex", "hsl"],
       "properties": {
-        "url": { "type": "string", "format": "uri" },
-        "viewBox": { "type": "string" },
-        "aspect_ratio": { "type": "number", "exclusiveMinimum": 0 },
-        "intended_background": { "type": "string", "enum": ["light", "dark", "any"] },
-        "primary_fill_hex": { "$ref": "#/$defs/hexColor" },
-        "confidence": { "$ref": "#/$defs/confidence" }
+        "name": { "type": "string" },
+        "hex": { "$ref": "#/$defs/hex" },
+        "hsl": { "$ref": "#/$defs/hsl" }
       }
     },
-    "themePalette": {
+    "logoAsset": {
       "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_path",
+        "viewBox",
+        "aspect_ratio",
+        "primary_fill_hex",
+        "min_width_px"
+      ],
+      "properties": {
+        "local_path": { "type": "string" },
+        "source_url": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "viewBox": { "type": "string" },
+        "aspect_ratio": { "type": "number", "exclusiveMinimum": 0 },
+        "primary_fill_hex": { "$ref": "#/$defs/hex" },
+        "recommended_background": { "type": "string" },
+        "min_width_px": { "type": "integer", "minimum": 1 },
+        "clearspace_rule": { "type": "string" }
+      }
+    },
+    "fontAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "style", "path", "sha256"],
+      "properties": {
+        "family": { "type": "string" },
+        "style": { "type": "string", "enum": ["normal", "italic"] },
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "fontLicense": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "license", "path", "sha256"],
+      "properties": {
+        "family": { "type": "string" },
+        "license": { "type": "string" },
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "themeSpec": {
+      "type": "object",
+      "additionalProperties": false,
       "required": [
         "background",
         "foreground",
@@ -278,23 +537,41 @@
         "muted_foreground",
         "border",
         "input",
-        "ring",
-        "radius"
+        "ring"
       ],
-      "additionalProperties": false,
       "properties": {
-        "background": { "$ref": "#/$defs/hslTriplet" },
-        "foreground": { "$ref": "#/$defs/hslTriplet" },
-        "primary": { "$ref": "#/$defs/hslTriplet" },
-        "primary_foreground": { "$ref": "#/$defs/hslTriplet" },
-        "accent": { "$ref": "#/$defs/hslTriplet" },
-        "accent_foreground": { "$ref": "#/$defs/hslTriplet" },
-        "muted": { "$ref": "#/$defs/hslTriplet" },
-        "muted_foreground": { "$ref": "#/$defs/hslTriplet" },
-        "border": { "$ref": "#/$defs/hslTriplet" },
-        "input": { "$ref": "#/$defs/hslTriplet" },
-        "ring": { "$ref": "#/$defs/hslTriplet" },
-        "radius": { "type": "string" }
+        "background": { "$ref": "#/$defs/colorSpec" },
+        "foreground": { "$ref": "#/$defs/colorSpec" },
+        "primary": { "$ref": "#/$defs/colorSpec" },
+        "primary_foreground": { "$ref": "#/$defs/colorSpec" },
+        "accent": { "$ref": "#/$defs/colorSpec" },
+        "accent_foreground": { "$ref": "#/$defs/colorSpec" },
+        "muted": { "$ref": "#/$defs/colorSpec" },
+        "muted_foreground": { "$ref": "#/$defs/colorSpec" },
+        "border": { "$ref": "#/$defs/colorSpec" },
+        "input": { "$ref": "#/$defs/colorSpec" },
+        "ring": { "$ref": "#/$defs/colorSpec" }
+      }
+    },
+    "typeRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "weight", "line_height", "letter_spacing", "size_px"],
+      "properties": {
+        "family": { "type": "string", "enum": ["serif", "sans"] },
+        "weight": { "type": "integer" },
+        "line_height": { "type": "number" },
+        "letter_spacing": { "type": "number" },
+        "size_px": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mobile", "tablet", "desktop"],
+          "properties": {
+            "mobile": { "type": "integer" },
+            "tablet": { "type": "integer" },
+            "desktop": { "type": "integer" }
+          }
+        }
       }
     }
   }
