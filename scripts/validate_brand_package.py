@@ -129,6 +129,7 @@ def main() -> int:
 
     # Required package files.
     required_files = [
+        "README.md",
         "brand.md",
         "ai-style-guide.md",
         "tokens/brand-theme.css",
